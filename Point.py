@@ -3,28 +3,44 @@ import math
 class Point:
     def __init__(self,x,y):
         ''' Initialize the point instance'''
-        #your code goes here
+        #your code goes he
+        self.x = x
+        self.y =y
+        
     def get_x(self):
         ''''Getter for the x coordinate'''
         #your code goes here
+        return self.x
+
     def get_y(self):
         '''Getter for the y coordinate'''
+        return self.y
         #your code goes here
     def set_x(self,x):
         '''Setter for the x coordinate'''
         #your code goes here
+        self._x=x
     def set_y(self,y):
+        self._y=y
         '''Setter for the y coordinate'''
         #your code goes here
     def distance(self,other):
         '''Calculate the distance between two points'''
         #your code goes here
+        if not isinstance(other, Point):
+          raise ValueError("The argument must be a Point instance")
+        return math.sqrt((self._x - other.get_x())**2 + (self._y - other.get_y())**2)
+
     def __eq__(self,other):
         '''Two points are equal if they have the same x and y coordinates'''
         #your code goes here
+        if not isinstance(other, Point):
+            return False
+        return self._x == other.get_x() and self._y == other.get_y()
     def __str__(self):
         ''''Returns a string representation of the point as (x,y)'''
         #your code goes here
+        return f"({self._x}, {self._y})"
 
 class Circle: 
     def __init__(self,center,radius):
