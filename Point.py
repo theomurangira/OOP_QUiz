@@ -66,5 +66,5 @@ print(c1)
 print(p1)
 print(c1.area())
 print(c1.is_in(p1))
-print(c2.is_in)
+print(c2.is_in(p2))
 
